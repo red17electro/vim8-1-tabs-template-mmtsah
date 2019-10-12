@@ -1,0 +1,12 @@
+<div class="tabs__titles">
+  <tab class="tabs__title" *ngFor="let tab of tabs; index as i;" [isActive]="i === activeIndex" [index]="i" (setIndex)="tabSelected($event)">
+    <h3 tab_title>{{'Tab ' + tab}}</h3>
+
+    <div tab_content>
+      <hello [name]="'Server'" *ngIf="i === 0; else elseBlock"></hello>
+      <ng-template #elseBlock>
+        <test [tab]="i + 1"></test>
+      </ng-template>
+    </div>
+  </tab>
+</div>

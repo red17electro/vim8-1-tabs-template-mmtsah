@@ -1,0 +1,6 @@
+<button class="btn tabs__title"  [class.tabs__title--active]="isActive" (click)="selectTab()">
+    <ng-content select="[tab_title]"></ng-content>
+</button>
+<div style="position: absolute;" *ngIf="isActive">
+    <ng-content select="[tab_content]" ></ng-content>
+</div>
